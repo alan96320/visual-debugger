@@ -1,9 +1,14 @@
 {
     "name": "visual-debugger",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Visual debugger for DOM line breaks, wrapping, and layout detection",
     "main": "src/visual-debugger.js",
+    "module": "src/visual-debugger.js",
     "types": "src/visual-debugger.d.js",
+    "exports": {
+        "import": "./src/visual-debugger.js",
+        "require": "./src/visual-debugger.js"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/alan96320/visual-debugger.git"
@@ -12,7 +17,14 @@
         "visual debugger",
         "line detection",
         "DOM layout",
-        "browser rendering"
+        "browser rendering",
+        "visual",
+        "debugger",
+        "line-breaks",
+        "highlight",
+        "html",
+        "browser",
+        "typescript"
     ],
     "author": "alan96320",
     "license": "ISC",

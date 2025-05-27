@@ -1,45 +1,31 @@
-declare class VisualDebugger {
-    /**
-     * Inisialisasi VisualDebugger dengan elemen target
-     * @param targetEl Elemen HTML yang ingin dianalisis
-     */
-    constructor(targetEl: HTMLElement);
+// index.d.ts
 
-    /**
-     * Menampilkan highlight visual pada baris-baris yang terdeteksi
-     */
-    highlight(): void;
-
-    /**
-     * Menghapus highlight visual
-     */
-    clear(): void;
-
-    /**
-     * Toggle (nyalakan/matikan) highlight visual
-     */
-    toggle(): void;
-
-    /**
-     * Data semua baris visual yang terdeteksi
-     */
-    get lines(): Array<{
-        node: Node;
-        x: number;
-        y: number;
-        top: number;
-        left: number;
-        right: number;
-        bottom: number;
-        width: number;
-        height: number;
-        text: string;
-    }>;
-
-    /**
-     * Bounding box dari elemen target
-     */
-    get bounding(): DOMRect;
+export interface LineData {
+  top: number;
+  left: number;
+  width: number;
+  height: number;
+  text: string;
 }
 
-export default VisualDebugger;
+export class VisualDebugger {
+  constructor(el: Element);
+
+  /** Analisis elemen dan ambil data baris */
+  analyze(): void;
+
+  /** Highlight baris di layar */
+  highlight(): void;
+
+  /** Bersihkan highlight */
+  clear(): void;
+
+  /** Data semua baris */
+  get lines(): LineData[];
+}
+
+/** Helper function: instansiasi VisualDebugger */
+export function visualDebugger(el: Element): VisualDebugger;
+
+declare const _default: typeof visualDebugger;
+export default _default;

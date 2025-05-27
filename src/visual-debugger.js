@@ -53,9 +53,7 @@ class VisualDebugger {
             // ini biasanya terjadi pada node DOM tipe element (NodeType 1)
             // seperti <div>, <p>, <a>, <img>, <canvas>, <svg>, dsb.
             if (node.length == undefined) {
-                let rects = JSON.parse(
-                    JSON.stringify(node.getBoundingClientRect())
-                );
+                let rects = JSON.parse(JSON.stringify(node.getBoundingClientRect()));
 
                 lines[rects.y].push({
                     node,
@@ -116,7 +114,6 @@ class VisualDebugger {
                 lines[item.y].push(item);
             }
         }
-
 
         let hasil = Object.keys(lines).reduce((a, b) => {
             // kita ambil baris yang memiliki panjang lebih dari 0
@@ -203,7 +200,27 @@ class VisualDebugger {
             this.highlight();
         }
     }
-
 }
 
-export default VisualDebugger;
+function visualDebugger(el) {
+    return new VisualDebugger(el);
+}
+
+// UMD + ESM + CommonJS Support
+(function (global, factory) {
+    if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
+        module.exports = { visualDebugger, VisualDebugger };
+        module.exports.default = visualDebugger; // CommonJS
+    } else if (typeof define === "function" && define.amd) {
+        define([], () => ({ visualDebugger, VisualDebugger }));
+    } else {
+        global.visualDebugger = visualDebugger;
+        global.VisualDebugger = VisualDebugger;
+    }
+})(typeof self !== "undefined" ? self : this, function () {
+    return { visualDebugger, VisualDebugger };
+});
+
+// ESM export
+export { visualDebugger, VisualDebugger };
+export default visualDebugger;

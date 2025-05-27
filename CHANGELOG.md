@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.1.0] - 2025-05-27
+
+### 🎯 Fitur Utama
+- Deteksi baris visual dari elemen HTML (wrap, `<br>`, dsb)
+- Highlight baris secara visual di browser
+- Akses data baris: `lines`
+
+### 🔥 Dukungan Multi-Environment
+- ESM (`import`)
+- CommonJS (`require`)
+- UMD Global (`<script>`)
+
+### 🛠️ Struktur API
+- Class `VisualDebugger`
+- Function `visualDebugger(el)`
+
 ## [1.0.0] - 2024-05-27
 
 🎉 Initial Release
