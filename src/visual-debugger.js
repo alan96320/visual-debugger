@@ -55,7 +55,7 @@ class VisualDebugger {
             if (node.length == undefined) {
                 let rects = JSON.parse(JSON.stringify(node.getBoundingClientRect()));
 
-                lines[rects.y].push({
+                lines[Math.floor(rects.y)].push({
                     node,
                     text: "",
                     ...rects,
@@ -111,7 +111,7 @@ class VisualDebugger {
             for (let i = 0; i < rectText.length; i++) {
                 const item = rectText[i];
                 item.node = node;
-                lines[item.y].push(item);
+                lines[Math.floor(item.y)].push(item);
             }
         }
 

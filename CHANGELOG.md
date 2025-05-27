@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.1] - 2025-05-27
+### 🎯 Fitur Utama
+- Memperbaiki kesalahan index
+
 ## [1.1.0] - 2025-05-27
 
 ### 🎯 Fitur Utama

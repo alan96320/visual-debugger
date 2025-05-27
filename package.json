@@ -1,6 +1,6 @@
 {
     "name": "visual-debugger",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Visual debugger for DOM line breaks, wrapping, and layout detection",
     "main": "src/visual-debugger.js",
     "module": "src/visual-debugger.js",
